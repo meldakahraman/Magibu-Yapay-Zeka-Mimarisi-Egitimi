@@ -1,0 +1,1 @@
+# Magibu-Yapay-Zeka-Mimarisi-E-itimi
