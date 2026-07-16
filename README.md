@@ -26,10 +26,10 @@ Bu çalışmada, Türkçe isimlerin fonetik ve morfolojik yapılarını analiz e
 * **BPE Tokenizer:** Türkçe isimler sonuna `</w>` eklenerek karakterlerine bölünmüş ve **35 birleştirme adımı** ile özel hece sözlüğü genişletilerek toplam **66 sözlük boyutuna ** ulaşılmıştır.
 * **Veri Hattı:** İsimlerin başına `<unk>` (başlangıç belirteci) eklenmiş ve **`block_size = 6`** kayan pencere mekanizmasıyla PyTorch `Dataset` oluşturulmuştur. Paket boyutu **`batch_size = 5`** olarak optimize edilmiştir.
 * **Model Mimarisi:** 128 hidden size, 4 katman (num_layers), 4 dikkat başlığı (num_heads) ve 2 KV başlığı (num_kv_heads) parametreleriyle TinyGemma kurulmuştur.
-* **Eğitim:** AdamW ($lr = 10^{-3}$) optimizasyonu ile 100 epoch eğitilen model, **0.64** minimum kayıp (loss) seviyesine ulaşmıştır.
+* **Eğitim:** AdamW (lr = 10^{-3}) optimizasyonu ile 100 epoch eğitilen model, **0.64** minimum kayıp (loss) seviyesine ulaşmıştır.
 * **Üretim :** Olasılıksal örnekleme  ve **0.8 Sıcaklık** kullanılarak yaratıcı Türkçe isimler türetilmiştir.
 
-### 🎯 Örnek Üretim Sonuçları
+### Örnek Üretim Sonuçları
 * Girdi: `'b'` ➔ `belg`
 * Girdi: `'e'` ➔ `esarp`
 * Girdi: `'m'` ➔ `miraç`
@@ -38,7 +38,7 @@ Bu çalışmada, Türkçe isimlerin fonetik ve morfolojik yapılarını analiz e
 
 ---
 
-## 🎯 Eğitim Kazanımları
+## Eğitim Kazanımları
 
 Bu eğitim süresince her hafta;
 * Derin öğrenme ve modern yapay zeka mimarilerinin (Transformers, LLMs) arkasındaki teoriyi pratik kodlama ile birleştirmeyi,
