@@ -3,17 +3,39 @@
 Bu depo, **Magibu** tarafından düzenlenen **Uygulamalı Yapay Zeka Mimarisi Eğitimi** boyunca her hafta hazırladığım ödevleri, projeleri ve uygulama çalışmalarını içermektedir.
 
 ---
+##  Depo Dosya Dizini ve Mimari Yapısı
 
+```plaintext
+.
+├──  1.Ödev-Tokenizer Oluşturma ve Minyatür Model Eğitimi/
+│   ├──  isimler.txt
+│   └──  Tokenizer Oluşturma ve Minyatür Model Eğitimi.ipynb
+│
+├──  2.1.Ödev-Domain Veri Seti Oluşturma/
+│   ├──  animasyon_dataset.json
+│   ├──  veri_seti_olusturma.ipynb
+│   └──  verimetni.txt
+│
+├──  2.2.Ödev- Özel BPE Tokenizer Oluşturma/
+│   ├──  animasyon_bpe_tokenizer/
+│   └──  tokenizer_olusturma.ipynb
+│
+├──  2.3.Ödev-Model Fine Tune Etme/
+│   └──  animasyon_lora_adapter.ipynb
+│
+└──  README.md
+```
+---
 ##  Haftalık Ödevler ve Projeler
 
 Aşağıdaki tablodan ilgili haftaya tıklayarak o haftanın konusuna, kodlarına ve detaylarına hızlıca ulaşabilirsiniz.
 
 | Ödev NO | Ödev Konusu | Klasör / Dosya | Durum |
 | :--- | :--- | :--- | :---: |
-| **1.1. ödev** | [TinyGemma ile Türkçe İsim Türetme](#-1-hafta-tinygemma-ile-türkçe-isim-türetme-projesi) | `Tokenizer Oluşturma ve Minyatür Model Eğitimi` | 
-| **2.1. ödev** | [Animasyon Domain Veri Seti Hazırlama](#-1-odev-animasyon-domain-veri-seti-hazirlama) | `veri_setini_olusturma.ipynb`, `animasyon_dataset.json` | [HF Dataset](https://huggingface.co/datasets/meldakahramann/animasyon-domain-dataset) | 
-| **2.2. ödev** |[Özel BPE Tokenizer Oluşturma](#-2-odev-ozel-bpe-tokenizer-olusturma) | `tokenizer_olusturma.ipynb`, `animasyon_bpe_tokenizer/` | [HF Tokenizer](https://huggingface.co/meldakahramann/animasyon-bpe-tokenizer) | Tamamlandı |
-| **4. ödev** | *Gelecek Ödev* | *Eklenecek* |  Beklemede |
+| **1.1. ödev** | [TinyGemma ile Türkçe İsim Türetme] | `Tokenizer Oluşturma ve Minyatür Model Eğitimi` | 
+| **2.1. ödev** | [Animasyon Domain Veri Seti Hazırlama] | `veri_setini_olusturma.ipynb`, `animasyon_dataset.json` | [HF Dataset](https://huggingface.co/datasets/meldakahramann/animasyon-domain-dataset) | 
+| **2.2. ödev** |[Özel BPE Tokenizer Oluşturma] | `tokenizer_olusturma.ipynb`, `animasyon_bpe_tokenizer/` | [HF Tokenizer](https://huggingface.co/meldakahramann/animasyon-bpe-tokenizer) |  |
+| **2.3. ödev** |[Animasyon Domain Llama-3 Fine-Tune]| `animasyon_lora_adapter `  | [HF Dataset](https://huggingface.co/meldakahramann/animasyon-lora-adapter) |
 | **5. ödev** | *Gelecek Ödev* | *Eklenecek* |  Beklemede |
 ---
 
@@ -64,6 +86,18 @@ Hazırlanan animasyon veri setindeki Türkçe kelimelerin ve sinematik özel isi
   * **Token ID'leri:** `[527, 633, 158, 534, 531, 28]`
 
 ---
+## 2.3. Ödev: Animasyon Domain Llama-3 Fine-Tune
+* **Amaç:** Hazırlanan animasyon veri seti ile Llama-3 8B Instruct taban modelini Unsloth ve LoRA (QLoRA) tekniklerini kullanarak ince ayardan (fine-tuning) geçirmek.
+* **Teknik Özellikler**
+   * **Taban Model:** unsloth/llama-3-8b-Instruct-bnb-4bit
+   * **Eğitim Altyapısı:** Unsloth, SFTTrainer ve LoRA adaptörü (r=16, lora_alpha=16)
+   * Eğitilen LoRA ağırlıkları meldakahramann/animasyon_lora_adapter reposuna aktarılmıştır.
+### **Eğitim Kazanımları:**
+* Modern Transformer mimarilerinin (Gemma, Llama-3) çalışma prensiplerini ve tokenizasyon süreçlerini sıfırdan uygulamayı,
+* Belirli alanlara yönelik (Domain-Specific) sentetik/geliştirilmiş veri setleri hazırlamayı,
+* Unsloth ve LoRA teknikleriyle düşük bellek tüketimiyle yüksek verimli LLM Fine-Tuning yapmayı tecrübe ettim.
+* 
+
 ---
 
 ## Eğitim Kazanımları
