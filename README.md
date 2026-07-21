@@ -96,7 +96,7 @@ Hazırlanan animasyon veri setindeki Türkçe kelimelerin ve sinematik özel isi
 * Modern Transformer mimarilerinin (Gemma, Llama-3) çalışma prensiplerini ve tokenizasyon süreçlerini sıfırdan uygulamayı,
 * Belirli alanlara yönelik (Domain-Specific) sentetik/geliştirilmiş veri setleri hazırlamayı,
 * Unsloth ve LoRA teknikleriyle düşük bellek tüketimiyle yüksek verimli LLM Fine-Tuning yapmayı tecrübe ettim.
-* 
+  
 
 ---
 
