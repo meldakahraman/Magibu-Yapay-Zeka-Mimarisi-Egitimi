@@ -35,7 +35,7 @@ Aşağıdaki tablodan ilgili haftaya tıklayarak o haftanın konusuna, kodların
 | **1.1. ödev** | [TinyGemma ile Türkçe İsim Türetme] | `Tokenizer Oluşturma ve Minyatür Model Eğitimi` | 
 | **2.1. ödev** | [Animasyon Domain Veri Seti Hazırlama] | `veri_setini_olusturma.ipynb`, `animasyon_dataset.json` | [HF Dataset](https://huggingface.co/datasets/meldakahramann/animasyon-domain-dataset) | 
 | **2.2. ödev** |[Özel BPE Tokenizer Oluşturma] | `tokenizer_olusturma.ipynb`, `animasyon_bpe_tokenizer/` | [HF Tokenizer](https://huggingface.co/meldakahramann/animasyon-bpe-tokenizer) |  |
-| **2.3. ödev** |[Animasyon Domain Llama-3 Fine-Tune]| `animasyon_lora_adapter `  | [HF Dataset](https://huggingface.co/meldakahramann/animasyon-lora-adapter) |
+| **2.3. ödev** |[Animasyon Domain Llama-3 Fine-Tune]| `animasyon_lora_adapter `  | [HF Fine-Tune](https://huggingface.co/meldakahramann/animasyon-lora-adapter) |
 | **5. ödev** | *Gelecek Ödev* | *Eklenecek* |  Beklemede |
 ---
 
