@@ -46,7 +46,7 @@ Aşağıdaki tablodan ilgili haftaya tıklayarak o haftanın konusuna, kodların
 | **2.1. ödev** | [Animasyon Domain Veri Seti Hazırlama] | `veri_setini_olusturma.ipynb`, `animasyon_dataset.json` | [HF Dataset](https://huggingface.co/datasets/meldakahramann/animasyon-domain-dataset) | 
 | **2.2. ödev** |[Özel BPE Tokenizer Oluşturma] | `tokenizer_olusturma.ipynb`, `animasyon_bpe_tokenizer/` | [HF Tokenizer](https://huggingface.co/meldakahramann/animasyon-bpe-tokenizer) |  |
 | **2.3. ödev** |[Animasyon Domain Llama-3 Fine-Tune]| `animasyon_lora_adapter `  | [HF Fine-Tune](https://huggingface.co/meldakahramann/animasyon-lora-adapter) |
-| **3. ödev** | [Türkçe MMLU Benchmark Değerlendirme] |  `animasyon_lora_adapter ` | [HF Fine-Tune](https://huggingface.co/meldakahramann/animasyon-lora-adapter) |
+| **3. ödev** | [Türkçe MMLU Benchmark Değerlendirme] |  `Animasyon_Llama3_Benchmark_Testi.ipynb ` | [HF Fine-Tune](https://huggingface.co/meldakahramann/animasyon-lora-adapter) |
 | **4. ödev** | [Kendi Benchmark Testini Oluşturma] |  `kendi_benchmark_testim.ipynb ` | [HF Benchmark_Testi](https://huggingface.co/datasets/meldakahramann/animasyon-benchmark-dataset) |
 
 ---
