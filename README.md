@@ -33,22 +33,30 @@ Bu depo, **Magibu** tarafından düzenlenen **Uygulamalı Yapay Zeka Mimarisi E�
 │   │   ├── tum_modeller_benchmark_sonuclari.json
 │   │   └── tum_modeller_optimize_benchmark_sonuclari.json
 │
+│
+├── 3.Hafta Ödevler/
+│   └── 1.Ödev Tool Calling/
+│    ├── app.py
+│    ├── requirements.txt
+│    └── README.md
+│
+│
 └──  README.md
 ```
 ---
-##  Haftalık Ödevler ve Projeler
+## Haftalık Ödevler ve Projeler
 
 Aşağıdaki tablodan ilgili haftaya tıklayarak o haftanın konusuna, kodlarına ve detaylarına hızlıca ulaşabilirsiniz.
 
 | Ödev NO | Ödev Konusu | Klasör / Dosya | Durum |
 | :--- | :--- | :--- | :---: |
-| **1.1. ödev** | [TinyGemma ile Türkçe İsim Türetme] | `Tokenizer Oluşturma ve Minyatür Model Eğitimi` | 
-| **2.1. ödev** | [Animasyon Domain Veri Seti Hazırlama] | `veri_setini_olusturma.ipynb`, `animasyon_dataset.json` | [HF Dataset](https://huggingface.co/datasets/meldakahramann/animasyon-domain-dataset) | 
-| **2.2. ödev** |[Özel BPE Tokenizer Oluşturma] | `tokenizer_olusturma.ipynb`, `animasyon_bpe_tokenizer/` | [HF Tokenizer](https://huggingface.co/meldakahramann/animasyon-bpe-tokenizer) |  |
-| **2.3. ödev** |[Animasyon Domain Llama-3 Fine-Tune]| `animasyon_lora_adapter `  | [HF Fine-Tune](https://huggingface.co/meldakahramann/animasyon-lora-adapter) |
-| **3. ödev** | [Türkçe MMLU Benchmark Değerlendirme] |  `Animasyon_Llama3_Benchmark_Testi.ipynb ` | [HF Fine-Tune](https://huggingface.co/meldakahramann/animasyon-lora-adapter) |
-| **4. ödev** | [Kendi Benchmark Testini Oluşturma] |  `kendi_benchmark_testim.ipynb ` | [HF Benchmark_Testi](https://huggingface.co/datasets/meldakahramann/animasyon-benchmark-dataset) |
-
+| **1.1. ödev** | [TinyGemma ile Türkçe İsim Türetme](#1-hafta-tinygemma-ile-türkçe-i̇sim-türetme-projesi) | `1.Hafta Ödevler/1.Ödev-Tokenizer Oluşturma ve Minyatür Model Eğitimi/` | |
+| **2.1. ödev** | [Animasyon Domain Veri Seti Hazırlama](#21-ödev-animasyon-domain-veri-seti-hazırlama) | `1.Hafta Ödevler/2.1.Ödev-Domain Veri Seti Oluşturma/` | [HF Dataset](https://huggingface.co/datasets/meldakahramann/animasyon-domain-dataset) |
+| **2.2. ödev** | [Özel BPE Tokenizer Oluşturma](#22-ödev-özel-bpe-tokenizer-oluşturma) | `1.Hafta Ödevler/2.2.Ödev- Özel BPE Tokenizer Oluşturma/` | [HF Tokenizer](https://huggingface.co/meldakahramann/animasyon-bpe-tokenizer) |
+| **2.3. ödev** | [Animasyon Domain Llama-3 Fine-Tune](#23-ödev-animasyon-domain-llama-3-fine-tune) | `1.Hafta Ödevler/2.3.Ödev-Model Fine Tune Etme/` | [HF Fine-Tune](https://huggingface.co/meldakahramann/animasyon-lora-adapter) |
+| **3. ödev** | [Türkçe MMLU Benchmark Değerlendirme](#3-ödev-türkçe-mmlu-benchmark-değerlendirme--karşılaştırma-raporu) | `2.Hafta Ödevler/1.Ödev Benchmark Testi/` | [HF Fine-Tune](https://huggingface.co/meldakahramann/animasyon-lora-adapter) |
+| **4. ödev** | [Kendi Benchmark Testini Oluşturma](#4-ödev-kendi-benchmark-testini-oluşturma-ve-model-kıyaslama) | `2.Hafta Ödevler/2.Ödev Kendi Benchmark Testini olusturma/` | [HF Benchmark_Testi](https://huggingface.co/datasets/meldakahramann/animasyon-benchmark-dataset) |
+| **5. ödev** | [Kripto & Döviz Tool Calling Asistanı](#5-ödev-kripto--döviz-tool-calling-function-calling-asistanı) | `3.Hafta Ödevler/1.Ödev Tool Calling/` | [HF Space Canlı Demo](https://huggingface.co/spaces/meldakahramann/kripto-tool-calling-demo) |
 ---
 
 ##  1. Hafta: TinyGemma ile Türkçe İsim Türetme Projesi
@@ -154,7 +162,21 @@ Animasyon alanında eğittiğimiz fine-tune modelimizin genelleme yeteneğini, b
 | **Qwen2.5_7B_Instruct** | `Qwen/Qwen2.5-7B-Instruct` | %55.93 | **%55.08** | Dengeli ve kararlı instruct başarısı |
 | **Mistral_7B_Instruct** | `mistralai/Mistral-7B-Instruct-v0.3` | %55.08 | **%52.54** | Standart sapma bandında seyir |
 | **Llama3_8B_Base** | `unsloth/llama-3-8b-bnb-4bit` | %7.63 | **%26.27** | Teorik rastgele tahmin (%25) sınırına ulaşıldı |
+---
+## 5. Ödev: Kripto & Döviz Tool Calling (Function Calling) Asistanı
 
+### Proje Hakkında
+Bu çalışmada, bir Büyük Dil Modelinin (LLM) dış dünya canlı veri kaynaklarıyla (CoinGecko ve Frankfurter API) dinamik etkileşime girmesini sağlayan **ReAct (Reasoning + Acting)** mimarisine sahip bir finans asistanı tasarlanmıştır. Uygulama, Hugging Face Spaces üzerinde ZeroGPU ve Gradio altyapısı ile canlı olarak hizmet vermektedir.
+
+### Teknik Özellikler ve Mimari Yaklaşım
+* **Model Mimarisi:** `Qwen/Qwen2.5-72B-Instruct` (Hugging Face Inference API üzerinden multi-turn ve araç çağırma kabiliyeti yüksek model tercih edilmiştir).
+* **Araç Entegrasyonu (JSON Schema):** Modelin kullanması için `get_crypto_price` (kripto fiyatı), `convert_currency` (döviz dönüşümü) ve `calculate_crypto_purchase` (alım miktarı hesaplama) olmak üzere 3 farklı fonksiyon JSON şeması ile tanımlanmıştır.
+* **Trace Log Şeffaflığı:** Modelin arka planda hangi araçları hangi sırayla tetiklediği (`[Turn 1]`, `[Turn 2]`) ve API'lerden dönen veriler arayüz üzerinde kullanıcıya adım adım (transparan) gösterilmektedir.
+* **Hata Toleransı ve Güvenlik:** Modelin sayısal verileri string olarak gönderme riskine karşı Python tarafında güvenli tip dönüşümleri (`type casting`) yapılmış, API token'ı Hugging Face `Secrets` mimarisi ile gizlenmiştir.
+
+### Canlı Demo & Depo Bağlantıları
+- **Hugging Face Spaces Canlı Uygulama:** [meldakahramann/kripto-tool-calling-demo](https://huggingface.co/spaces/meldakahramann/kripto-tool-calling-demo)
+- **Space Kod Deposu:** [meldakahramann/kripto-tool-calling-demo / Tree](https://huggingface.co/spaces/meldakahramann/kripto-tool-calling-demo/tree/main)
 ---
 ## Eğitim Kazanımları
 
