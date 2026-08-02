@@ -35,11 +35,19 @@ Bu depo, **Magibu** tarafından düzenlenen **Uygulamalı Yapay Zeka Mimarisi E�
 │
 │
 ├── 3.Hafta Ödevler/
-│   └── 1.Ödev Tool Calling/
-│    ├── app.py
-│    ├── requirements.txt
-│    └── README.md
-│
+│   ├── 1.Ödev Tool Calling/
+│   │   ├── app.py
+│   │   ├── requirements.txt
+│   │   └── README.md
+│   │
+│   ├── 2.Ödev Custom Chat Template (Jinja2)/
+│   │   └── chat_template.jinja
+│   │
+│   └── 3.Ödev Tool-Calling Destekli Asistan/
+│       ├── README.md
+│       ├── app.py
+│       ├── comic_store.db
+│       └── requirements.txt
 │
 └──  README.md
 ```
@@ -48,15 +56,17 @@ Bu depo, **Magibu** tarafından düzenlenen **Uygulamalı Yapay Zeka Mimarisi E�
 
 Aşağıdaki tablodan ilgili haftaya tıklayarak o haftanın konusuna, kodlarına ve detaylarına hızlıca ulaşabilirsiniz.
 
-| Ödev NO | Ödev Konusu | Klasör / Dosya | Durum |
+| Ödev NO | Ödev Konusu | Klasör / Dosya | Durum / Bağlantı |
 | :--- | :--- | :--- | :---: |
-| **1.1. ödev** | [TinyGemma ile Türkçe İsim Türetme](#1-hafta-tinygemma-ile-türkçe-i̇sim-türetme-projesi) | `1.Hafta Ödevler/1.Ödev-Tokenizer Oluşturma ve Minyatür Model Eğitimi/` | |
+| **1.1. ödev** | [TinyGemma ile Türkçe İsim Türetme](#1-hafta-tinygemma-ile-türkçe-i̇sim-türetme-projesi) | `1.Hafta Ödevler/1.Ödev-Tokenizer Oluşturma ve Minyatür Model Eğitimi/` | - |
 | **2.1. ödev** | [Animasyon Domain Veri Seti Hazırlama](#21-ödev-animasyon-domain-veri-seti-hazırlama) | `1.Hafta Ödevler/2.1.Ödev-Domain Veri Seti Oluşturma/` | [HF Dataset](https://huggingface.co/datasets/meldakahramann/animasyon-domain-dataset) |
 | **2.2. ödev** | [Özel BPE Tokenizer Oluşturma](#22-ödev-özel-bpe-tokenizer-oluşturma) | `1.Hafta Ödevler/2.2.Ödev- Özel BPE Tokenizer Oluşturma/` | [HF Tokenizer](https://huggingface.co/meldakahramann/animasyon-bpe-tokenizer) |
 | **2.3. ödev** | [Animasyon Domain Llama-3 Fine-Tune](#23-ödev-animasyon-domain-llama-3-fine-tune) | `1.Hafta Ödevler/2.3.Ödev-Model Fine Tune Etme/` | [HF Fine-Tune](https://huggingface.co/meldakahramann/animasyon-lora-adapter) |
 | **3. ödev** | [Türkçe MMLU Benchmark Değerlendirme](#3-ödev-türkçe-mmlu-benchmark-değerlendirme--karşılaştırma-raporu) | `2.Hafta Ödevler/1.Ödev Benchmark Testi/` | [HF Fine-Tune](https://huggingface.co/meldakahramann/animasyon-lora-adapter) |
 | **4. ödev** | [Kendi Benchmark Testini Oluşturma](#4-ödev-kendi-benchmark-testini-oluşturma-ve-model-kıyaslama) | `2.Hafta Ödevler/2.Ödev Kendi Benchmark Testini olusturma/` | [HF Benchmark_Testi](https://huggingface.co/datasets/meldakahramann/animasyon-benchmark-dataset) |
 | **5. ödev** | [Kripto & Döviz Tool Calling Asistanı](#5-ödev-kripto--döviz-tool-calling-function-calling-asistanı) | `3.Hafta Ödevler/1.Ödev Tool Calling/` | [HF Space Canlı Demo](https://huggingface.co/spaces/meldakahramann/kripto-tool-calling-demo) |
+| **6. ödev** | Custom Chat Template (Jinja2) | `3.Hafta Ödevler/2.Ödev Custom Chat Template (Jinja2)/` | [HF Template Reposu](https://huggingface.co/meldakahramann/custom-chat-template) |
+| **7. ödev** | Çizgi Roman Diyarı Tool-Calling Asistanı | `3.Hafta Ödevler/3.Ödev Tool-Calling Destekli Asistan/` | [HF Space Canlı Demo](https://huggingface.co/spaces/meldakahramann/comic-store-assistant) |o/spaces/meldakahramann/kripto-tool-calling-demo) |
 ---
 
 ##  1. Hafta: TinyGemma ile Türkçe İsim Türetme Projesi
@@ -178,6 +188,39 @@ Bu çalışmada, bir Büyük Dil Modelinin (LLM) dış dünya canlı veri kaynak
 - **Hugging Face Spaces Canlı Uygulama:** [meldakahramann/kripto-tool-calling-demo](https://huggingface.co/spaces/meldakahramann/kripto-tool-calling-demo)
 - **Space Kod Deposu:** [meldakahramann/kripto-tool-calling-demo / Tree](https://huggingface.co/spaces/meldakahramann/kripto-tool-calling-demo/tree/main)
 ---
+## 6. Ödev: Custom Chat Template (Jinja2) Hazırlama
+
+### Proje Hakkında
+Bu çalışmada, bir Büyük Dil Modelinin (LLM) kullanıcı (`user`), sistem (`system`), asistan (`assistant`) ve araç (`tool`) mesajlarını doğru rol ayrımıyla işleyebilmesi ve standartlaştırılmış ChatML formatına uygun çıktı üretebilmesi amacıyla özel bir **Jinja2 Sohbet Şablonu (Chat Template)** tasarlanmıştır.
+
+### Teknik Özellikler ve Mimari Yaklaşım
+* **Jinja2 Şablon Yapısı:** Şablon; `generation_prompt` mekanizması, rol etiketleme ve araç çağırma (Tool / Function Calling) parametrelerini kapsayacak esneklikte yazılmıştır.
+* **Multi-Turn & Tool Support:** Kullanıcı isteklerinin ardından modelin fonksiyon çağırma adımını (`tool_calls`) ve fonksiyondan dönen yanıtın (`tool` rolü) sohbet geçmişine doğru biçimlenerek eklenmesini sağlar.
+* **Geniş Uyumluluk:** Hugging Face `transformers` kütüphanesinin `apply_chat_template` fonksiyonu ile %100 entegre çalışacak şekilde kurgulanmıştır.
+
+### Depo Bağlantıları
+- **Hugging Face Template Reposu:** [meldakahramann/custom-chat-template](https://huggingface.co/meldakahramann/custom-chat-template)
+
+---
+
+## 7. Ödev: Çizgi Roman Diyarı Tool-Calling Destekli Asistan
+
+### Proje Hakkında
+Bu çalışmada, bir Büyük Dil Modelinin dış veritabanı (SQLite) ile doğrudan entegre olarak canlı veri okuma ve yazma işlemlerini gerçekleştirdiği **Tool-Calling (Function Calling)** destekli bir mağaza asistanı geliştirilmiştir. Uygulama, Hugging Face Spaces üzerinde Gradio altyapısı ile canlı olarak yayındadır.
+
+### Teknik Özellikler ve Mimari Yaklaşım
+* **Model Mimarisi:** `meta-llama/Llama-3.3-70B-Instruct` (Hugging Face Inference API altyapısı üzerinden çoklu adımda karar alma kabiliyeti kullanılmıştır).
+* **Veritabanı Entegrasyonu (SQLite):** Çizgi roman kataloğunu, fiyat bilgilerini ve müşteri siparişlerini yöneten `comics` ve `orders` tabloları üzerinden ilişkisel veri yapısı kurulmuştur.
+* **Araç Tanımları (JSON Schema):** Modelin kullanımı için 3 temel fonksiyon entegre edilmiştir:
+  1. `get_comics_catalog()`: Mağazadaki tüm ürünleri, fiyat ve stok bilgisiyle getirir (*Veri Okuma*).
+  2. `search_comic(query)`: Çizgi roman adı veya yayıncıya göre arama yapar (*Veri Okuma*).
+  3. `create_order(comic_id, quantity, customer_name)`: Stok kontrolü yaparak sipariş kaydeder ve veritabanındaki stoğu eksiltir (*Veri Yazma*).
+* **Halüsinasyon Engelleme & Stok Güvenliği:** Model bir sipariş almadan önce zorunlu olarak `search_comic` fonksiyonu ile canlı stok kontrolü yapar. Eğer ürün yoksa veya `stock: 0` ise model uydurma sipariş oluşturmaz, veritabanından dönen veriye dayanarak işlemi reddeder.
+* **Kullanıcı Arayüzü:** Gradio `Blocks` mimarisi kullanılarak tüm sürümlerle kararlı çalışan, sohbet geçmişini koruyan ve hızlı test seçenekleri sunan dinamik bir web arayüzü kurgulanmıştır.
+
+### Canlı Demo & Depo Bağlantıları
+- **Hugging Face Spaces Canlı Uygulama:** [meldakahramann/comic-store-assistant](https://huggingface.co/spaces/meldakahramann/comic-store-assistant)
+- **Space Kod Deposu:** [meldakahramann/comic-store-assistant / Tree](https://huggingface.co/spaces/meldakahramann/comic-store-assistant/tree/main)
 ## Eğitim Kazanımları
 
 Bu eğitim süresince her hafta;
