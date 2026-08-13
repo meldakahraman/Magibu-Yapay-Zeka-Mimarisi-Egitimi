@@ -4,7 +4,7 @@ from craft_rag import query_rag, init_rag_db
 from tavily import TavilyClient
 
 # Tavily sitesinden aldığınız API anahtarını buraya yapıştırın
-TAVILY_API_KEY = "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"
+TAVILY_API_KEY = "tvly-dev..."
 tavily_client = TavilyClient(api_key=TAVILY_API_KEY)
 
 try:
