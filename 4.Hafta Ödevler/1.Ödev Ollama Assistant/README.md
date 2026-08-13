@@ -462,3 +462,59 @@ Bu bilgileri kullanarak, kendi projenizi oluşturabilir ve belki de video veya g
 ---
 ##  Uygulama Ekran Görüntüsü
 <img width="1248" height="472" alt="Ekran görüntüsü 2026-08-13 142139" src="https://github.com/user-attachments/assets/b9f2dc9f-6ff0-432b-9c25-ae02d5a40285" />
+---
+##  Kurulum ve Çalıştırma Rehberi
+
+Projeyi kendi yerel ortamınızda çalıştırmak için aşağıdaki adımları sırasıyla uygulayabilirsiniz:
+
+---
+
+### 1. Ön Gereksinimler
+* **Python 3.10** veya üzeri bir sürüm.
+* **Ollama**: Sisteminizde Ollama'nın kurulu ve arka planda çalışıyor olması gerekmektedir. [(Ollama'yı İndir)](https://ollama.com)
+
+---
+
+### 2. Proje Kurulumu ve Bağımlılıklar
+
+Terminalinizde proje dizinine gidin, sanal ortam oluşturun ve gerekli kütüphaneleri yükleyin:
+
+```bash
+# Repoyu klonlayın ve ödev dizinine geçin
+git clone [https://github.com/meldakahraman/Magibu-Yapay-Zeka-Mimarisi-Egitimi.git](https://github.com/meldakahraman/Magibu-Yapay-Zeka-Mimarisi-Egitimi.git)
+cd Magibu-Yapay-Zeka-Mimarisi-Egitimi/"4.Hafta Ödevler"/"1.Ödev Ollama Assistant"
+
+# Sanal ortam oluşturun ve aktif edin
+python -m venv venv
+
+# Windows için aktifleştirme:
+.\venv\Scripts\activate
+
+# Linux / Mac için aktifleştirme:
+source venv/bin/activate
+
+# Gerekli Python kütüphanelerini yükleyin
+pip install -r requirements.txt
+```
+### 3. Yerel Dil Modelinin İndirilmesi
+Asistanın çalışabilmesi için Ollama üzerinden **Qwen 2.5 (3B)** modelini indirmeniz gerekmektedir:
+
+```bash
+ollama run qwen2.5:3b
+```
+### 4. Web Araması İçin API Anahtarı Ayarı
+Asistanın canlı internet araması (`web_search`) fonksiyonunu kullanabilmesi için bir Tavily API anahtarına ihtiyacı vardır:
+
+1. [tavily.com](https://tavily.com) sitesine giderek ücretsiz bir hesap oluşturun ve API anahtarınızı (API Key) kopyalayın.
+2. Proje klasöründeki **`tools.py`** dosyasını açın.
+3. Dosyanın **7. satırında** yer alan `TAVILY_API_KEY` değişkenine kopyaladığınız anahtarı yapıştırın:
+
+```python
+# tools.py (7. Satır)
+TAVILY_API_KEY = "buraya_tavily_api_keyinizi_yapistirin"
+```
+### 5. Asistanı Çalıştırma
+Tüm kurulumlar ve API anahtarı ayarı tamamlandıktan sonra asistanı başlatmak için terminale şu komutu yazın:
+
+```bash
+python chat.py
