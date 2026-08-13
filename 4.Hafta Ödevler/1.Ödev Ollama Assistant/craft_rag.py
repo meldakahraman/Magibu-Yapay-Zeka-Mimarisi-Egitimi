@@ -27,7 +27,7 @@ def init_rag_db():
             ids=ids
         )
 
-def query_rag(query_text: str, n_results: int = 4) -> str:  # <-- Buradaki 2 sayısını 4 yaptık
+def query_rag(query_text: str, n_results: int = 4) -> str: 
     try:
         collection = client.get_or_create_collection(name="craft_knowledge")
         results = collection.query(
