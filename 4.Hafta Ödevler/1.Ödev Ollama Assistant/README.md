@@ -461,4 +461,4 @@ Bu bilgileri kullanarak, kendi projenizi oluşturabilir ve belki de video veya g
 
 ---
 ##  Uygulama Ekran Görüntüsü
-![Craft Companion Terminal Arayüzü]<img width="1248" height="472" alt="Ekran görüntüsü 2026-08-13 142139" src="https://github.com/user-attachments/assets/b9f2dc9f-6ff0-432b-9c25-ae02d5a40285" />
+<img width="1248" height="472" alt="Ekran görüntüsü 2026-08-13 142139" src="https://github.com/user-attachments/assets/b9f2dc9f-6ff0-432b-9c25-ae02d5a40285" />
