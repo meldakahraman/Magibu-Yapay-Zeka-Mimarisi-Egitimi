@@ -1,6 +1,6 @@
-#  Akıllı Tekstil ve Örgü Asistanı (Craft Companion)
+#  Akıllı Tekstil ve Örgü Asistanı 
 
-Proje, el sanatları (örgü, tığ işi, amigurumi) alanında uzmanlaşmış, yerel donanım üzerinde çalışan **Ajan Tabanlı (Agentic) ve RAG Destekli bir Yapay Zeka Asistanıdır**. 
+Proje, el sanatları (örgü, tığ işi, amigurumi) alanında uzmanlaşmış, yerel donanım üzerinde çalışan **Ajan Tabanlı  ve RAG Destekli bir Yapay Zeka Asistanıdır**. 
 
 Kullanıcıların örgü projelerindeki malzeme hesabı, birim dönüşümleri, teknik terim sorguları, iplik özellikleri ve motif tarifleri gibi ihtiyaçlarını akıllı araç çağrıları (Tool Calling) ile yanıtlar.
 
@@ -8,7 +8,7 @@ Kullanıcıların örgü projelerindeki malzeme hesabı, birim dönüşümleri, 
 
 ##  Projenin Amacı ve Hizmet Ettiği Alan
 
-Klasik büyük dil modelleri (LLM), el sanatları gibi spesifik alanlarda genel geçer veya halüsinasyon içeren (uydurma terimler) yanıtlar üretmeye eğilimlidir. Ayrıca, yabancı tariflerdeki ölçü birimleri (inç, oz, yarda) ile malzeme/metraj hesaplamalarında matematiksel hatalar yapabilirler.
+Klasik büyük dil modelleri, el sanatları gibi spesifik alanlarda genel geçer veya halüsinasyon içeren (uydurma terimler) yanıtlar üretmeye eğilimlidir. Ayrıca, yabancı tariflerdeki ölçü birimleri (inç, oz, yarda) ile malzeme/metraj hesaplamalarında matematiksel hatalar yapabilirler.
 
 **Craft Companion'ın Amacı:**
 * **Spesifik Alan Uzmanlığı:** Örgü ve tığ işi ekosistemine özel, doğru ve standart Türkçe terminoloji ile yanıt üretmek.
@@ -81,7 +81,7 @@ Sistem, modüler bir yapıda tasarlanmış olup şu bileşenlerden oluşmaktadı
 
 ##  Model Boyutu ve Performans Notu (LLM Limitations)
 
-#####Projede yerel donanım kaynakları ve hızlı çıkarım süreleri göz önüne alınarak **`qwen2.5:3b` (3B Parametre)** modeli tercih edilmiştir.Sistem mimarisi (Tavily Arama Entegrasyonu, ChromaDB RAG ve Guardrail) araç çağrılarını %100 doğrulukla gerçekleştirse de, 3B boyutundaki küçük dil modellerinin doğası gereği çekilen arama snippet'larını Türkçe metne dönüştürürken semantik (anlamsal) sapmalar veya ifade bozuklukları yaşanabilmektedir. Bu durum özel `SYSTEM_PROMPT` ve düşük sıcaklık (`temperature: 0.1`) optimizasyonları ile minimize edilmiştir.
+Projede yerel donanım kaynakları ve hızlı çıkarım süreleri göz önüne alınarak **`qwen2.5:3b` (3B Parametre)** modeli tercih edilmiştir.Sistem mimarisi (Tavily Arama Entegrasyonu, ChromaDB RAG ve Guardrail) araç çağrılarını %100 doğrulukla gerçekleştirse de, 3B boyutundaki küçük dil modellerinin doğası gereği çekilen arama snippet'larını Türkçe metne dönüştürürken semantik (anlamsal) sapmalar veya ifade bozuklukları yaşanabilmektedir. Bu durum özel `SYSTEM_PROMPT` ve düşük sıcaklık (`temperature: 0.1`) optimizasyonları ile minimize edilmiştir.
 
 ---
 
