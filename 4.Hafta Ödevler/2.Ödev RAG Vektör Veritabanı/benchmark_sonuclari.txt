@@ -1,0 +1,130 @@
+--- BENCHMARK TESTİ (Optimize Edilmiş Eşik / Threshold: 0.42) ---
+
+Soru 1: Ülkemizde gebelik tahliyesi (kürtaj) için yasal sınır kaç haftadır?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.7650
+SİSTEM YANITI: Ülkemizde gebelik tahliyesi amacıyla yapılan kürtajlarda yasal sınır ülkemiz için son adet tarihinden itibaren 10 hafta ...
+------------------------------------------------------------
+Soru 2: Glutensiz beslenme nasıl uygulanır ve etiket okurken nelere dikkat edilmelidir?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.7581
+SİSTEM YANITI: Gluten intoleransı günümüzde sıklıkça karşılaştığımız problemlerden biridir. Ödem ve alerjik reaksiyonların sebeblerinde...
+------------------------------------------------------------
+Soru 3: Boşanma sürecinin zorlukları ve 'iyi boşanma' kavramı nedir?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.6960
+SİSTEM YANITI: İyi boşanma nedir? Çocuk ve iyi boşanma?Sevgili danışanlarım, “Kimse boşanmak için evlenmez”; Çok yakın bir bağın kopmas...
+------------------------------------------------------------
+Soru 4: Depresyonun en sık görülen şikayetleri ve belirtileri nelerdir?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.7020
+SİSTEM YANITI: Aşağıda verilen depresyon belirtileri kişiden kişiye değişiklik göstermekle birlikte, bu belirtilerin ne kadar zaman sür...
+------------------------------------------------------------
+Soru 5: Reflü oluşumunu engellemek için uyumadan önce beslenme nasıl olmalıdır?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.6562
+SİSTEM YANITI: Stresten kaçınmak Karın solunumunu öğrenmek ve uygulamak Yatak başının yaklaşık 10-15 cm yükseltilmesi Gece uyumadan yak...
+------------------------------------------------------------
+Soru 6: Gluten diyetinde hangi yiyeceklerden kesinlikle uzak durulmalıdır?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.6777
+SİSTEM YANITI: yer fıstığı olan hiçbir ürünü tüketmemelisiniz.Gluten en dikkat etmeniz gereken besin ögesi, çünkü maalesef ki birçok yi...
+------------------------------------------------------------
+Soru 7: Endoskopi sırasında mideden biyopsi işlemi nasıl yapılır?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.7133
+SİSTEM YANITI: Endoskop içinden geçen aletler ile birçok lezyona müdahale edilebilir. Endoskopi ile; uygun hastalarda darlıkların geniş...
+------------------------------------------------------------
+Soru 8: Kan yapıcı besinler tüketilirken şeker yerine ne tercih edilmelidir?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.4598
+SİSTEM YANITI: içecekler yerine,enerji içermeyen en iyi seçenektir.Burada bir konunun altını çizmek gerekmektedir: Meyve aromalı maden ...
+------------------------------------------------------------
+Soru 9: Gülme sırasında üst ön dişlerin görünmemesi yüz deformitesi açısından ne anlama gelir?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.7858
+SİSTEM YANITI: Gülme ifadesi olmayan hastalar Sık olmamakla birlikte ciddi bir yüz deformitesidir. Ve bu hastalar gülme sırasında norma...
+------------------------------------------------------------
+Soru 10: Chia tohumu tüketmenin sağlık açısından faydaları ve besin değeri nedir?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.7491
+SİSTEM YANITI: Chia tohumu nasıl tüketilir?Yurt dışında içecek, bisküvi, puding, tahıl gevrekleri ve enerji karışımları olmak üzere bir...
+------------------------------------------------------------
+Soru 11: Özel öğrenme bozukluğu olan çocukların durumu hangi hastalıkla sıklıkla karıştırılmaktadır?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.7382
+SİSTEM YANITI: 13 yaştan önce başlayarak, ailenin yasaklarına karşın çoğu zaman geceyi dışarıda geçirmektedir. 13 yaştan önce başlayara...
+------------------------------------------------------------
+Soru 12: Vücudun bağışıklık sistemi HPV enfeksiyonunu ne kadar sürede kendiliğinden temizler?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.7646
+SİSTEM YANITI: Cinsel olarak aktif olan çoğu insanın hayatının bir evresinde HPV ile karşılaştığına değinen Dr. Ulusoy “On vakanın doku...
+------------------------------------------------------------
+Soru 13: Sınavda başarılı olmak için stres yönetimi neden büyük bir önem taşır?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.8277
+SİSTEM YANITI: Sınavda Stres Yönetimi Stres yönetimi her alanda olduğu gibi sınavda da başarılı olmak için en önemli madde. Bilgiden de...
+------------------------------------------------------------
+Soru 14: Sürekli laf kesen, oturamayan ve uyumsuz olmakla suçlanan çocuklarda hangi davranışlar gözlenir?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.6251
+SİSTEM YANITI: Karşı gelme bozukluğunda, yetişkinlere karşı olumsuz şiddet içeren davranışlar. karşı gelme, itaatsizlik, uyumsuzluk, ra...
+------------------------------------------------------------
+Soru 15: Gebelikte egzersiz yaparken aktivitenin şiddeti ve süresi neden bilinçli düzenlenmelidir?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.7605
+SİSTEM YANITI: Gebelikte egzersizin sınırları nelerdir; Gebelikte yapılan egzersizin hem anne adayı hem de bebekte yaratabileceği potan...
+------------------------------------------------------------
+Soru 16: Doğum sonrası varis tedavisine başlanması için ne kadar süre beklenmelidir?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.7675
+SİSTEM YANITI: - Doğum sonrası varis şikayetleri devam eden varislerde, - Kozmetik sorun yaratan varislerde - Doğumu takiben 3. aydan i...
+------------------------------------------------------------
+Soru 17: Anne ve baba çocukların 2 yaş sendromu krizleri karşısında nasıl bir tutum sergilemelidir?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.6893
+SİSTEM YANITI: İki yaşındaki her çocuk bu evreden geçer . Bu dönemin 2 yaş sendromuna dönüşmemesi için anne babanın hangi durumda ne ya...
+------------------------------------------------------------
+Soru 18: Evliliğin ilk günlerinde görülen balayı sistiti nedir ve neden oluşur?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.5872
+SİSTEM YANITI: Ateşiniz yükselmişse. Belirtiler ani bir şekilde kötüleşmişse. Hamileyseniz ,Diyabet hastasıysanız. BALAYI SİSTİTİ NEDİR...
+------------------------------------------------------------
+Soru 19: Eşler kavga anında normal zamanda kırıcı olmamak için söyleyemedikleri şeyleri neden söylerler?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.6784
+SİSTEM YANITI: Kavganın başladığı anda ne yaşanır? Eşler kavga ettikleri zamanlarda birbirlerine düşündükleri her şeyi ifade edebiliyor...
+------------------------------------------------------------
+Soru 20: Sanal gerçeklik teknolojisinin yoğun kullanımı DPDR (gerçeklikten kopma) eğilimini nasıl etkiler?
+Tür: POZITIF | Hesaplananan Benzerlik: 0.6383
+SİSTEM YANITI: Teknolojideki hızlı büyümeyle birlikte ‘sanal gerçeklik’de bir o kadar gelişti. Yapılan araştırmalarla birlikte sanal ge...
+------------------------------------------------------------
+Soru 21: Kuantum bilgisayarlarda Qiskit kütüphanesi ile devre nasıl kurulur?
+Tür: NEGATIF | Hesaplananan Benzerlik: 0.1663
+SİSTEM YANITI: Bu sorunun cevabı dokümanlarımda yer almamaktadır.
+------------------------------------------------------------
+Soru 22: League of Legends oyununda ormancı (jungle) rolünün görevleri nelerdir?
+Tür: NEGATIF | Hesaplananan Benzerlik: 0.3761
+SİSTEM YANITI: Bu sorunun cevabı dokümanlarımda yer almamaktadır.
+------------------------------------------------------------
+Soru 23: Tığ işi ile dalga motifi (wave stitch) yaparken nelere dikkat edilmelidir?
+Tür: NEGATIF | Hesaplananan Benzerlik: 0.3769
+SİSTEM YANITI: Bu sorunun cevabı dokümanlarımda yer almamaktadır.
+------------------------------------------------------------
+Soru 24: Atbaş (Atbash) şifreleme algoritması nasıl çalışır?
+Tür: NEGATIF | Hesaplananan Benzerlik: 0.1852
+SİSTEM YANITI: Bu sorunun cevabı dokümanlarımda yer almamaktadır.
+------------------------------------------------------------
+Soru 25: Doğal dil işleme modellerinde BPE tokenizer nasıl eğitilir?
+Tür: NEGATIF | Hesaplananan Benzerlik: 0.3035
+SİSTEM YANITI: Bu sorunun cevabı dokümanlarımda yer almamaktadır.
+------------------------------------------------------------
+Soru 26: Hyunam-Dong Kitabevi romanının ana karakterinin hikayesi nedir?
+Tür: NEGATIF | Hesaplananan Benzerlik: 0.2597
+SİSTEM YANITI: Bu sorunun cevabı dokümanlarımda yer almamaktadır.
+------------------------------------------------------------
+Soru 27: Gradient Boosting (GBDT) sınıflandırıcılarında hiperparametre optimizasyonu nasıl yapılır?
+Tür: NEGATIF | Hesaplananan Benzerlik: 0.2548
+SİSTEM YANITI: Bu sorunun cevabı dokümanlarımda yer almamaktadır.
+------------------------------------------------------------
+Soru 28: Minecraft Dungeons'ta zindan boss'larını yenmek için en iyi taktikler nelerdir?
+Tür: NEGATIF | Hesaplananan Benzerlik: 0.3510
+SİSTEM YANITI: Bu sorunun cevabı dokümanlarımda yer almamaktadır.
+------------------------------------------------------------
+Soru 29: 1D-CNN mimarisi kullanılarak görüntü öznitelik çıkarımı nasıl gerçekleştirilir?
+Tür: NEGATIF | Hesaplananan Benzerlik: 0.2768
+SİSTEM YANITI: Bu sorunun cevabı dokümanlarımda yer almamaktadır.
+------------------------------------------------------------
+Soru 30: Teknofest yarışmalarında proje final raporu hazırlanırken hangi format kullanılmalıdır?
+Tür: NEGATIF | Hesaplananan Benzerlik: 0.2365
+SİSTEM YANITI: Bu sorunun cevabı dokümanlarımda yer almamaktadır.
+------------------------------------------------------------
+
+========================================
+       BENCHMARK TEST SONUÇLARI
+========================================
+Optimizasyon Yöntemi: Min-Max Küme Ortalaması (Midpoint)
+Hesaplanan Optimal Threshold: 0.42
+Doğru Yanıtlanan Pozitif Sorular: 20 / 20
+Başarıyla Filtrelenen Negatif Sorular: 10 / 10
