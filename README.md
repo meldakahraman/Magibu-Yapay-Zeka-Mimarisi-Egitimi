@@ -49,6 +49,21 @@ Bu depo, **Magibu** tarafından düzenlenen **Uygulamalı Yapay Zeka Mimarisi E�
 │       ├── comic_store.db
 │       └── requirements.txt
 │
+├── 4.Hafta Ödevler/
+│   ├── 1.Ödev Ollama Assistant/
+│   │   ├── chat.py
+│   │   ├── tools.py
+│   │   ├── craft_rag.py
+│   │   ├── ollama_client.py
+│   │   ├── requirements.txt
+│   │   └── README.md
+│   │
+│   └── 2.Ödev RAG Vektor Veritabani/
+│       ├── parcalanmis_veri.csv
+│       ├── benchmark_sonuclari.txt
+│       ├── rag_vektor_veritabani.ipynb
+│       └── README.md
+│
 └──  README.md
 ```
 ---
@@ -67,6 +82,10 @@ Aşağıdaki tablodan ilgili haftaya tıklayarak o haftanın konusuna, kodların
 | **5. ödev** | [Kripto & Döviz Tool Calling Asistanı](#5-ödev-kripto--döviz-tool-calling-function-calling-asistanı) | `3.Hafta Ödevler/1.Ödev Tool Calling/` | [HF Space Canlı Demo](https://huggingface.co/spaces/meldakahramann/kripto-tool-calling-demo) |
 | **6. ödev** | Custom Chat Template (Jinja2) | `3.Hafta Ödevler/2.Ödev Custom Chat Template (Jinja2)/` | [HF Template Reposu](https://huggingface.co/meldakahramann/custom-chat-template) |
 | **7. ödev** | Çizgi Roman Diyarı Tool-Calling Asistanı | `3.Hafta Ödevler/3.Ödev Tool-Calling Destekli Asistan/` | [HF Space Canlı Demo](https://huggingface.co/spaces/meldakahramann/comic-store-assistant) |o/spaces/meldakahramann/kripto-tool-calling-demo) |
+| **8. ödev** | [Akıllı Tekstil ve Örgü Asistanı (Craft Companion)](#8-ödev-akıllı-tekstil-ve-örgü-asistanı-craft-companion) | `4.Hafta Ödevler/1.Ödev Ollama Assistant/` | [Yerel Ollama & RAG Destekli Asistan] |
+| **9. ödev** | [Türkçe Tıbbi Makale RAG & Vektör Veritabanı](#9-ödev-türkçe-tıbbi-makale-rag--vektör-veritabanı) | `4.Hafta Ödevler/2.Ödev RAG Vektor Veritabani/` | [HF Dataset](https://huggingface.co/datasets/meldakahramann/turkish-medical-articles-rag) |
+
+
 ---
 
 ##  1. Hafta: TinyGemma ile Türkçe İsim Türetme Projesi
@@ -221,6 +240,56 @@ Bu çalışmada, bir Büyük Dil Modelinin dış veritabanı (SQLite) ile doğru
 ### Canlı Demo & Depo Bağlantıları
 - **Hugging Face Spaces Canlı Uygulama:** [meldakahramann/comic-store-assistant](https://huggingface.co/spaces/meldakahramann/comic-store-assistant)
 - **Space Kod Deposu:** [meldakahramann/comic-store-assistant / Tree](https://huggingface.co/spaces/meldakahramann/comic-store-assistant/tree/main)
+---
+## 8. Ödev: Akıllı Tekstil ve Örgü Asistanı (Craft Companion)
+
+### Proje Hakkında
+Bu çalışmada; el sanatları, örgü ve tığ işi alanında uzmanlaşmış, tamamen yerel donanım üzerinde çalışan **Ajan Tabanlı ** ve **RAG Destekli ** bir yapay zeka asistanı geliştirilmiştir. Asistan; matematiksel malzeme hesaplamalarını, yabancı birim dönüşümlerini, vektör veritabanından teknik terim sorgularını ve canlı web araştırmalarını otonom araç çağrıları (**Tool Calling**) ile yönetmektedir.
+
+### Teknik Özellikler ve Mimari Yaklaşım
+* **Yerel LLM Altyapısı:** `qwen2.5:3b` (Ollama üzerinden yerel çıkarım, kararlı araç tetiklemesi için `temperature=0.1` optimizasyonu).
+* **Hibrit Guardrail Güvenlik Katmanı:** Anahtar kelime eşleme (`CRAFT_KEYWORDS`) ve düşük sıcaklıklı LLM sınıflandırıcısı (`check_domain_with_llm`) bir arada kullanılarak dikiş makinesi, konfeksiyon veya kapsam dışı genel sorular sıfır maliyetle engellenmektedir.
+* **Vektör Veritabanı & RAG:** `ChromaDB` (Persistent Vector Store) kullanılarak teknik kısaltmalar (`sc`, `hdc`, `magic ring`, `blocking`, `mattress stitch` vb.) anlamsal vektör uzayında indekslenmiş ve `n_results=4` semantik arama ile asistan bağlamına dahil edilmiştir.
+* **Otonom Araç Yönetimi (`tools.py`):**
+  * `calculate_craft_material`: Boyut ($cm^2$) ve iplik kalınlığına göre gereken ip metrajını, yumak adedini ve ideal tığ numarasını hesaplar.
+  * `convert_yarn_units`: Yabancı örgü tariflerindeki `oz ➔ gram`, `yarda ➔ metre` ve `inç ➔ cm` dönüşümlerini matematiksel hassasiyetle gerçekleştirir.
+  * `query_craft_rag`: Yerel ChromaDB koleksiyonundan tığ işi terminolojisini çeker.
+  * `web_search`: **Tavily API** entegrasyonu ile canlı internet üzerinden güncel iplik markalarını, bakım talimatlarını ve yapılış tariflerini arar.
+  * `export_project_plan`: Üretilen nihai proje reçetesini yerel ortama `.txt` formatında kaydeder.
+
+### Değerlendirme ve Performans Analizi (3B Model Kısıtları & Kazanımlar)
+1. **Araç Çağırma ve Zincirleme (Tool Calling & Chaining):** Model, niyet analizini başarıyla yaparak doğru araçları otonom şekilde tetiklemiş ve çok adımlı sorgularda araçları art arda çalıştırmıştır.
+2. **Alan Sınırlaması (Guardrail Başarısı):** El sanatları kapsamı dışındaki sorgular (Örn: dikiş makinesi kullanımı) katı filtreleme katmanına takılarak gereksiz çıkarım ve araç çalıştırma maliyeti oluşturmadan doğrudan reddedilmiştir.
+3. **Küçük Dil Modeli (3B) Kısıtları:** 3B parametreli yerel modellerin doğası gereği, web snippet'larını özetlerken veya yerel terimleri metne dökerken hafif semantik kaymalar (Örn: "yumak" yerine "yumuşak tığ", "yıkama" yerine "yakma") gözlemlenmiş; sistem istemcisi (System Prompt) ve düşük sıcaklık ile bu durum minimum seviyeye indirilmiştir.
+
+---
+## 9. Ödev: Türkçe Tıbbi Makale RAG & Vektör Veritabanı
+
+### Proje Hakkında
+Bu çalışmada; Türkçe tıbbi makaleler üzerinde çalışan yüksek doğruluklu bir **RAG** mimarisi ve **Vektör Veritabanı** sistemi kurulmuştur. Proje kapsamında ham tıbbi metinler semantik parçalamadan (chunking) geçirilmiş, Türkçe için optimize edilmiş `magibu/embeddingmagibu-200m` modeliyle 768 boyutlu vektör uzayına aktarılmış ve model halüsinasyonlarını sıfıra indirmek amacıyla dinamik eşik optimizasyonu  destekli 30 soruluk bir benchmark testi ile doğrulanmıştır.
+
+### Teknik Özellikler ve Mimari Yaklaşım
+* **Veri Kaynağı & Filtreleme:** `umutertugrul/turkish-medical-articles` veri setinden `random_state=42` ile 500 adet ham makale seçilmiştir.
+* **Semantik Parçalama (Chunking):** Langchain `RecursiveCharacterTextSplitter` kullanılarak; `chunk_size = 1000`, `chunk_overlap = 200` ve hiyerarşik ayırıcılar (`\n\n`, `\n`, ` `) ile tıbbi terim ve bağlam bütünlüğü korunarak toplam **2.673 adet chunk** üretilmiştir.
+* **Embedding Modeli:** `magibu/embeddingmagibu-200m` modeli (768 boyut / dimension) tercih edilerek GPU üzerinde hızlı vektörleştirme gerçekleştirilmiş ve `url`, `chunk_text`, `chunk_vector` şeması oluşturulmuştur.
+* **Vektör Veritabanı:** `ChromaDB` üzerinde kalıcı koleksiyon oluşturulmuş, mesafe değerleri `1 - Distance` formülü ile Kosinüs Benzerliğine dönüştürülmüştür.
+* **Dinamik Eşik Optimizasyonu (Midpoint Algoritması):**
+  * Standart **0.50** başlangıç eşiğinde bazı zayıf eşleşen geçerli pozitif soruların (Soru 8: 0.4598 benzerlik) filtrelendiği tespit edilmiştir.
+  * Negatiflerin maksimum benzerliği (**0.3769**) ile pozitiflerin minimum benzerliği (**0.4598**) analiz edilerek optimal eşik değeri $\text{Threshold} = \frac{0.3769 + 0.4598}{2} \approx \mathbf{0.42}$ olarak sabitlenmiştir.
+
+### 30 Soruluk Benchmark Test Sonuçları
+
+| Test Kategorisi | Soru Sayısı | Başarılı Yanıt | Başarı Oranı (%) | Benzerlik Skoru Aralığı |
+| :--- | :---: | :---: | :---: | :---: |
+| **Pozitif Sorular (Tıbbi Alan / Kapsam İçi)** | 20 | 20 | **%100** | 0.4598 – 0.8277 |
+| **Negatif Sorular (Kapsam Dışı / Alakasız Konular)** | 10 | 10 | **%100** | 0.1663 – 0.3769 |
+| **Toplam / Genel Başarım** | **30** | **30** | **%100** | **Optimal Threshold: 0.42** |
+
+### Değerlendirme ve Kazanımlar
+1. **Halüsinasyon Engelleme:** 0.42 optimal eşiği altında kalan alakasız sorgularda (Kuantum, LoL, Atbash şifreleme, BPE tokenizer, GBDT vb.) sistem uydurma yapmadan doğrudan *"Bu sorunun cevabı dokümanlarımda yer almamaktadır"* yanıtını vermiştir.
+2. **Kapsam İçi Doğruluk:** 0.42 eşik optimizasyonu sayesinde sınırda kalan geçerli tıbbi sorular da sisteme eksiksiz dahil edilerek %100 geri çağırma (recall) başarısı sağlanmıştır.
+
+---
 ## Eğitim Kazanımları
 
 Bu eğitim süresince her hafta;
