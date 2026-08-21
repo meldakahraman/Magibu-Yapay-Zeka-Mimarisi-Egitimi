@@ -6,22 +6,23 @@ Bu depo, **Magibu** tarafından düzenlenen **Uygulamalı Yapay Zeka Mimarisi E�
 ##  Depo Dosya Dizini ve Mimari Yapısı
 
 ```plaintext
-.1.Hafta Ödevler
-├──  1.Ödev-Tokenizer Oluşturma ve Minyatür Model Eğitimi/
-│   ├──  isimler.txt
-│   └──  Tokenizer Oluşturma ve Minyatür Model Eğitimi.ipynb
-│
-├──  2.1.Ödev-Domain Veri Seti Oluşturma/
+├──.1.Hafta Ödevler
+│   └──1.Ödev-Tokenizer Oluşturma ve Minyatür Model Eğitimi/
+│   │      ├──  isimler.txt
+│   │      └──  Tokenizer Oluşturma ve Minyatür Model Eğitimi.ipynb
+│   │ 
+│   ├──  2.1.Ödev-Domain Veri Seti Oluşturma/
 │   ├──  animasyon_dataset.json
 │   ├──  veri_seti_olusturma.ipynb
 │   └──  verimetni.txt
-│
-├──  2.2.Ödev- Özel BPE Tokenizer Oluşturma/
+│   │ 
+│   ├──  2.2.Ödev- Özel BPE Tokenizer Oluşturma/
 │   ├──  animasyon_bpe_tokenizer/
 │   └──  tokenizer_olusturma.ipynb
-│
-├──  2.3.Ödev-Model Fine Tune Etme/
+│   │
+│   ├──  2.3.Ödev-Model Fine Tune Etme/
 │   └──  animasyon_lora_adapter.ipynb
+│
 │
 ├── 2.Hafta Ödevler/
 │   ├── 1.Ödev Benchmark Testi/ 
